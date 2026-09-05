@@ -1,5 +1,5 @@
 /* =========================
-   OPEN ENVELOPE
+   OPEN INVITATION
 ========================= */
 
 const envelope = document.getElementById("openInvitation");
@@ -11,10 +11,8 @@ if (envelope) {
         envelope.classList.add("open");
 
         setTimeout(() => {
-
             window.location.href = "birthday.html";
-
-        }, 1000);
+        }, 800);
 
     });
 
@@ -22,16 +20,59 @@ if (envelope) {
 
 
 /* =========================
-   MOVING NO BUTTON
+   ACCEPT PAGE
 ========================= */
 
+const yesButton = document.getElementById("yesButton");
 const noButton = document.getElementById("noButton");
+
+
+/* YES BUTTON */
+
+if (yesButton) {
+
+    yesButton.addEventListener("click", () => {
+
+        const acceptanceContent =
+            document.getElementById("acceptanceContent");
+
+        const successMessage =
+            document.getElementById("successMessage");
+
+        if (acceptanceContent && successMessage) {
+
+            acceptanceContent.classList.add("hidden");
+
+            successMessage.classList.remove("hidden");
+
+            createConfetti();
+        }
+
+    });
+
+}
+
+
+/* NO BUTTON */
+
+/* Desktop: move when mouse approaches */
 
 if (noButton) {
 
-    noButton.addEventListener("mouseenter", moveButton);
+    noButton.addEventListener("mouseenter", () => {
 
-    noButton.addEventListener("touchstart", (event) => {
+        /* Only move on devices with a mouse */
+
+        if (window.matchMedia("(hover: hover)").matches) {
+            moveButton();
+        }
+
+    });
+
+
+    /* Mobile: move when tapped */
+
+    noButton.addEventListener("click", (event) => {
 
         event.preventDefault();
 
@@ -42,38 +83,19 @@ if (noButton) {
 }
 
 
+/* Move button safely */
+
 function moveButton() {
 
-    const x = Math.random() * 200 - 100;
-    const y = Math.random() * 100 - 50;
+    if (!noButton) return;
+
+    /* Smaller movement so it stays on screen */
+
+    const x = Math.random() * 100 - 50;
+    const y = Math.random() * 60 - 30;
 
     noButton.style.transform =
         `translate(${x}px, ${y}px)`;
-
-}
-
-
-/* =========================
-   YES BUTTON
-========================= */
-
-const yesButton = document.getElementById("yesButton");
-
-if (yesButton) {
-
-    yesButton.addEventListener("click", () => {
-
-        document
-            .getElementById("acceptanceContent")
-            .classList.add("hidden");
-
-        document
-            .getElementById("successMessage")
-            .classList.remove("hidden");
-
-        createConfetti();
-
-    });
 
 }
 
@@ -89,8 +111,11 @@ function createConfetti() {
 
     if (!container) return;
 
+    /* Remove old confetti first */
 
-    for (let i = 0; i < 80; i++) {
+    container.innerHTML = "";
+
+    for (let i = 0; i < 50; i++) {
 
         const confetti =
             document.createElement("div");
@@ -98,10 +123,10 @@ function createConfetti() {
         confetti.classList.add("confetti");
 
         confetti.style.left =
-            Math.random() * 100 + "vw";
+            Math.random() * 100 + "%";
 
         confetti.style.animationDelay =
-            Math.random() * 2 + "s";
+            Math.random() * 1.5 + "s";
 
         confetti.innerHTML =
             Math.random() > 0.5 ? "🎉" : "❤️";
