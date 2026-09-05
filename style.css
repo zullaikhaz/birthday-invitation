@@ -1,0 +1,699 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f8f2ec;
+    color: #3e2c2c;
+    overflow-x: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floating-hearts span {
+    position: fixed;
+    color: #c86b72;
+    opacity: 0.4;
+    animation: float 8s infinite ease-in-out;
+}
+
+.floating-hearts span:nth-child(1) {
+    left: 10%;
+    top: 20%;
+    font-size: 25px;
+}
+
+.floating-hearts span:nth-child(2) {
+    left: 85%;
+    top: 15%;
+    font-size: 35px;
+    animation-delay: 2s;
+}
+
+.floating-hearts span:nth-child(3) {
+    left: 70%;
+    top: 70%;
+    font-size: 20px;
+    animation-delay: 4s;
+}
+
+.floating-hearts span:nth-child(4) {
+    left: 20%;
+    top: 75%;
+    font-size: 30px;
+    animation-delay: 1s;
+}
+
+.floating-hearts span:nth-child(5) {
+    left: 50%;
+    top: 10%;
+    font-size: 18px;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            rgba(46, 30, 30, 0.55),
+            rgba(46, 30, 30, 0.75)
+        ),
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.small-text,
+.click-text {
+    font-family: "Playwrite AU QLD", cursive;
+}
+
+.small-text {
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    line-height: 1.1;
+    margin-bottom: 50px;
+}
+
+
+/* =========================
+   ENVELOPE
+========================= */
+
+.envelope-wrapper {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.envelope {
+    position: relative;
+    width: min(80vw, 380px);
+    height: 247px;
+    background: #e8b7b5;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+}
+
+.letter {
+    position: absolute;
+    width: 85%;
+    height: 75%;
+    left: 7.5%;
+    top: 10%;
+    background: #fffaf5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: #6b4545;
+    z-index: 2;
+
+    transition: transform 1s ease;
+}
+
+.letter p {
+    font-family: "Playwrite AU QLD", cursive;
+    font-size: 0.8rem;
+}
+
+.heart {
+    color: #c85d67;
+    font-size: 35px;
+}
+
+.envelope-front {
+    position: absolute;
+    bottom: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 190px solid transparent;
+    border-right: 190px solid transparent;
+    border-top: 122px solid #e4a6a5;
+
+    z-index: 3;
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 190px solid transparent;
+    border-right: 190px solid transparent;
+    border-top: 122px solid #f0c1bf;
+
+    transform-origin: top;
+    transition: transform 1s ease;
+
+    z-index: 4;
+}
+
+.envelope-heart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-size: 45px;
+    color: #c85d67;
+
+    z-index: 5;
+}
+
+.envelope-wrapper.open .envelope-flap {
+    transform: rotateX(180deg);
+}
+
+.envelope-wrapper.open .letter {
+    transform: translateY(-120px);
+}
+
+.click-text {
+    margin-top: 40px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    padding: clamp(70px, 10vw, 130px)
+             clamp(20px, 5vw, 80px);
+
+    text-align: center;
+}
+
+.full-page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-content {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.section-title,
+.birthday-heading {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    margin-bottom: 20px;
+}
+
+.eyebrow {
+    color: #b45f67;
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+    margin-bottom: 20px;
+}
+
+.description {
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.8;
+    color: #6c5a5a;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.next-button {
+    display: inline-block;
+
+    margin-top: 50px;
+
+    padding: 16px 30px;
+
+    border-radius: 50px;
+
+    background: #c96c73;
+    color: white;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+
+    box-shadow: 0 10px 25px rgba(201,108,115,0.3);
+}
+
+.next-button:hover {
+    transform: translateY(-4px);
+}
+
+
+/* =========================
+   BIRTHDAY
+========================= */
+
+.birthday-reveal {
+    background: linear-gradient(135deg, #fff8f3, #f4dfdb);
+}
+
+.birthday-heading span {
+    color: #b85e66;
+}
+
+.birthday-icon {
+    font-size: clamp(5rem, 10vw, 8rem);
+    margin-top: 30px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+
+/* =========================
+   INVITATION
+========================= */
+
+.invitation-section {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paper-card {
+    width: min(100%, 700px);
+    background: #fffdf9;
+
+    padding: clamp(40px, 7vw, 80px);
+
+    box-shadow: 0 20px 60px rgba(82,55,55,0.15);
+}
+
+.paper-card h1 {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    color: #b75e66;
+    margin-bottom: 30px;
+}
+
+.paper-card h2 {
+    font-family: "Playwrite AU QLD", cursive;
+    color: #b75e66;
+    margin-top: 25px;
+}
+
+.paper-card p {
+    line-height: 1.9;
+}
+
+
+/* =========================
+   DETAILS
+========================= */
+
+.details-container {
+    width: min(100%, 700px);
+    margin: 50px auto 0;
+
+    display: grid;
+    gap: 20px;
+}
+
+.detail-card {
+    background: white;
+
+    padding: 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    text-align: left;
+
+    border-radius: 15px;
+
+    box-shadow: 0 10px 30px rgba(80,50,50,0.08);
+}
+
+.detail-icon {
+    font-size: 2rem;
+}
+
+.detail-card span {
+    font-size: 0.75rem;
+    color: #b75e66;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.detail-card p {
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.detail-card small {
+    display: block;
+    margin-top: 5px;
+    color: #8a6c6c;
+}
+
+
+/* =========================
+   ITINERARY
+========================= */
+
+.itinerary-section {
+    background: linear-gradient(135deg, #f2dedd, #fff8f3);
+    min-height: 100vh;
+}
+
+.timeline {
+    width: min(100%, 850px);
+    margin: 60px auto 0;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 2px;
+    height: 100%;
+
+    background: #c9898e;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 60px;
+
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.timeline-dot {
+    position: absolute;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.5rem;
+
+    z-index: 2;
+}
+
+.timeline-card {
+    width: 42%;
+
+    background: white;
+
+    padding: 25px;
+
+    text-align: left;
+
+    border-radius: 15px;
+
+    box-shadow: 0 10px 30px rgba(80,50,50,0.1);
+}
+
+.time {
+    color: #b75e66;
+    font-weight: 600;
+}
+
+.timeline-card h3 {
+    font-family: "DM Serif Display", serif;
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.timeline-card p {
+    line-height: 1.7;
+    color: #6c5a5a;
+}
+
+
+/* =========================
+   ACCEPTANCE
+========================= */
+
+.acceptance-section {
+    background: #fffaf6;
+}
+
+.acceptance-section h1 {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(2.3rem, 6vw, 4.5rem);
+    margin-bottom: 20px;
+}
+
+.button-container {
+    margin-top: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+button {
+    border: none;
+
+    padding: 18px 30px;
+
+    border-radius: 50px;
+
+    font-family: "Poppins", sans-serif;
+
+    cursor: pointer;
+}
+
+.yes-button {
+    background: #c96c73;
+    color: white;
+}
+
+.no-button {
+    background: white;
+    border: 1px solid #d9aaaa;
+    color: #704f4f;
+
+    transition: transform 0.2s ease;
+}
+
+.success-message {
+    max-width: 600px;
+}
+
+.big-heart {
+    font-size: 5rem;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+/* =========================
+   FINAL PAGE
+========================= */
+
+.final-section {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px;
+
+    color: rgb(138, 115, 115);
+
+    background:
+        linear-gradient(
+            rgba(40,25,25,0.55),
+            rgba(40,25,25,0.75)
+        ),
+
+}
+
+.final-overlay {
+    max-width: 700px;
+}
+
+.final-section h1 {
+    font-family: "Playwrite AU QLD", cursive;
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-bottom: 40px;
+}
+
+.final-section p {
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+.final-note {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    margin: 40px 0;
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti {
+    position: fixed;
+    top: -50px;
+
+    font-size: 30px;
+
+    animation: fall 4s linear forwards;
+
+    z-index: 999;
+}
+
+@keyframes fall {
+    to {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .timeline::before {
+        left: 30px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(odd) {
+        flex-direction: row;
+        padding-left: 70px;
+    }
+
+    .timeline-dot {
+        left: 30px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .timeline-card {
+        width: 100%;
+    }
+
+    .envelope {
+        transform: scale(0.85);
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .button-container {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+
+}
