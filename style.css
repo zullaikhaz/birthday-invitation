@@ -1,4 +1,11 @@
 /* =========================
+   GOOGLE FONTS
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600&display=swap');
+
+
+/* =========================
    GENERAL
 ========================= */
 
@@ -14,262 +21,35 @@ html {
 
 body {
     font-family: "Poppins", sans-serif;
-    background: #f8f2ec;
-    color: #3e2c2c;
+    color: #4b3b3b;
     overflow-x: hidden;
 }
 
-.hidden {
-    display: none !important;
-}
-
-
-/* =========================
-   FLOATING HEARTS
-========================= */
-
-.floating-hearts span {
-    position: fixed;
-    color: #c86b72;
-    opacity: 0.4;
-    animation: float 8s infinite ease-in-out;
-}
-
-.floating-hearts span:nth-child(1) {
-    left: 10%;
-    top: 20%;
-    font-size: 25px;
-}
-
-.floating-hearts span:nth-child(2) {
-    left: 85%;
-    top: 15%;
-    font-size: 35px;
-    animation-delay: 2s;
-}
-
-.floating-hearts span:nth-child(3) {
-    left: 70%;
-    top: 70%;
-    font-size: 20px;
-    animation-delay: 4s;
-}
-
-.floating-hearts span:nth-child(4) {
-    left: 20%;
-    top: 75%;
-    font-size: 30px;
-    animation-delay: 1s;
-}
-
-.floating-hearts span:nth-child(5) {
-    left: 50%;
-    top: 10%;
-    font-size: 18px;
-    animation-delay: 3s;
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-25px);
-    }
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
+.section {
     min-height: 100vh;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-    padding: 30px;
-
-    background:
-        linear-gradient(
-            rgba(46, 30, 30, 0.55),
-            rgba(46, 30, 30, 0.75)
-        ),
-}
-
-.hero-content {
-    max-width: 600px;
-}
-
-.small-text,
-.click-text {
-    font-family: "Playwrite AU QLD", cursive;
-}
-
-.small-text {
-    margin-bottom: 20px;
-}
-
-.hero h1 {
-    font-family: "DM Serif Display", serif;
-    font-size: clamp(2.5rem, 7vw, 5rem);
-    line-height: 1.1;
-    margin-bottom: 50px;
-}
-
-
-/* =========================
-   ENVELOPE
-========================= */
-
-.envelope-wrapper {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    perspective: 1000px;
-}
-
-.envelope {
-    position: relative;
-    width: min(80vw, 380px);
-    height: 247px;
-    background: #e8b7b5;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
-}
-
-.letter {
-    position: absolute;
-    width: 85%;
-    height: 75%;
-    left: 7.5%;
-    top: 10%;
-    background: #fffaf5;
+    padding: 80px 30px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    color: #6b4545;
-    z-index: 2;
-
-    transition: transform 1s ease;
-}
-
-.letter p {
-    font-family: "Playwrite AU QLD", cursive;
-    font-size: 0.8rem;
-}
-
-.heart {
-    color: #c85d67;
-    font-size: 35px;
-}
-
-.envelope-front {
-    position: absolute;
-    bottom: 0;
-
-    width: 0;
-    height: 0;
-
-    border-left: 190px solid transparent;
-    border-right: 190px solid transparent;
-    border-top: 122px solid #e4a6a5;
-
-    z-index: 3;
-}
-
-.envelope-flap {
-    position: absolute;
-    top: 0;
-
-    width: 0;
-    height: 0;
-
-    border-left: 190px solid transparent;
-    border-right: 190px solid transparent;
-    border-top: 122px solid #f0c1bf;
-
-    transform-origin: top;
-    transition: transform 1s ease;
-
-    z-index: 4;
-}
-
-.envelope-heart {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-
-    font-size: 45px;
-    color: #c85d67;
-
-    z-index: 5;
-}
-
-.envelope-wrapper.open .envelope-flap {
-    transform: rotateX(180deg);
-}
-
-.envelope-wrapper.open .letter {
-    transform: translateY(-120px);
-}
-
-.click-text {
-    margin-top: 40px;
-}
-
-
-/* =========================
-   SECTIONS
-========================= */
-
-.section {
-    padding: clamp(70px, 10vw, 130px)
-             clamp(20px, 5vw, 80px);
-
     text-align: center;
 }
 
-.full-page {
-    min-height: 100vh;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.page-content {
-    width: 100%;
-    max-width: 1000px;
-}
-
-.section-title,
-.birthday-heading {
+.section-title {
     font-family: "DM Serif Display", serif;
-    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 1.1;
+
     margin-bottom: 20px;
 }
 
-.eyebrow {
-    color: #b45f67;
-    letter-spacing: 3px;
-    font-size: 0.75rem;
-    margin-bottom: 20px;
-}
-
-.description {
-    max-width: 600px;
-    margin: auto;
-    line-height: 1.8;
+.subtitle {
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
     color: #6c5a5a;
+
+    margin-bottom: 30px;
 }
 
 
@@ -277,311 +57,315 @@ body {
    BUTTONS
 ========================= */
 
+button,
+.next-button,
+.home-button {
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+
+    border: none;
+    border-radius: 50px;
+
+    padding: 15px 30px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
 .next-button {
     display: inline-block;
-
-    margin-top: 50px;
-
-    padding: 16px 30px;
-
-    border-radius: 50px;
 
     background: #c96c73;
     color: white;
 
     text-decoration: none;
 
-    transition: 0.3s;
-
-    box-shadow: 0 10px 25px rgba(201,108,115,0.3);
+    box-shadow: 0 8px 20px rgba(201, 108, 115, 0.25);
 }
 
 .next-button:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(201, 108, 115, 0.35);
 }
 
 
 /* =========================
-   BIRTHDAY
-========================= */
-
-.birthday-reveal {
-    background: linear-gradient(135deg, #fff8f3, #f4dfdb);
-}
-
-.birthday-heading span {
-    color: #b85e66;
-}
-
-.birthday-icon {
-    font-size: clamp(5rem, 10vw, 8rem);
-    margin-top: 30px;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    50% {
-        transform: translateY(-15px);
-    }
-}
-
-
-/* =========================
-   INVITATION
-========================= */
-
-.invitation-section {
-    min-height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.paper-card {
-    width: min(100%, 700px);
-    background: #fffdf9;
-
-    padding: clamp(40px, 7vw, 80px);
-
-    box-shadow: 0 20px 60px rgba(82,55,55,0.15);
-}
-
-.paper-card h1 {
-    font-family: "DM Serif Display", serif;
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    color: #b75e66;
-    margin-bottom: 30px;
-}
-
-.paper-card h2 {
-    font-family: "Playwrite AU QLD", cursive;
-    color: #b75e66;
-    margin-top: 25px;
-}
-
-.paper-card p {
-    line-height: 1.9;
-}
-
-
-/* =========================
-   DETAILS
-========================= */
-
-.details-container {
-    width: min(100%, 700px);
-    margin: 50px auto 0;
-
-    display: grid;
-    gap: 20px;
-}
-
-.detail-card {
-    background: white;
-
-    padding: 25px;
-
-    display: flex;
-    align-items: center;
-    gap: 20px;
-
-    text-align: left;
-
-    border-radius: 15px;
-
-    box-shadow: 0 10px 30px rgba(80,50,50,0.08);
-}
-
-.detail-icon {
-    font-size: 2rem;
-}
-
-.detail-card span {
-    font-size: 0.75rem;
-    color: #b75e66;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.detail-card p {
-    margin-top: 5px;
-    font-weight: 500;
-}
-
-.detail-card small {
-    display: block;
-    margin-top: 5px;
-    color: #8a6c6c;
-}
-
-
-/* =========================
-   ITINERARY
+   ITINERARY PAGE
 ========================= */
 
 .itinerary-section {
-    background: linear-gradient(135deg, #f2dedd, #fff8f3);
     min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #f3dedd,
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #fffaf7,
+            #f3e7e1
+        );
+
+    padding: 90px 30px;
+}
+
+.itinerary-section .section-title {
+    margin-top: 10px;
 }
 
 .timeline {
-    width: min(100%, 850px);
+    width: min(100%, 950px);
+
     margin: 60px auto 0;
+
     position: relative;
 }
+
+
+/* Timeline vertical line */
 
 .timeline::before {
     content: "";
 
     position: absolute;
 
+    top: 0;
+    bottom: 0;
+
     left: 50%;
-    transform: translateX(-50%);
 
     width: 2px;
-    height: 100%;
 
-    background: #c9898e;
+    transform: translateX(-50%);
+
+    background: #d59a9e;
 }
 
+
+/* Timeline item */
+
 .timeline-item {
-    display: flex;
+    display: grid;
+
+    grid-template-columns: 1fr 90px 1fr;
+
     align-items: center;
+
+    position: relative;
 
     margin-bottom: 60px;
 
-    position: relative;
+    min-height: 120px;
 }
 
-.timeline-item:nth-child(odd) {
-    flex-direction: row-reverse;
-}
+
+/* Timeline icon */
 
 .timeline-dot {
-    position: absolute;
-
-    left: 50%;
-    transform: translateX(-50%);
+    grid-column: 2;
 
     width: 60px;
     height: 60px;
 
-    border-radius: 50%;
-
-    background: white;
+    justify-self: center;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    background: white;
+
+    border-radius: 50%;
 
     font-size: 1.5rem;
 
     z-index: 2;
+
+    box-shadow:
+        0 8px 25px rgba(100, 70, 70, 0.12);
 }
 
+
+/* Timeline cards */
+
 .timeline-card {
-    width: 42%;
+    width: 100%;
 
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
 
-    padding: 25px;
+    padding: 28px;
+
+    border-radius: 18px;
 
     text-align: left;
 
-    border-radius: 15px;
+    box-shadow:
+        0 10px 30px rgba(100, 70, 70, 0.12);
 
-    box-shadow: 0 10px 30px rgba(80,50,50,0.1);
+    transition: transform 0.3s ease;
 }
 
+.timeline-card:hover {
+    transform: translateY(-5px);
+}
+
+
+/* Odd cards → right */
+
+.timeline-item:nth-child(odd) .timeline-card {
+    grid-column: 3;
+}
+
+
+/* Even cards → left */
+
+.timeline-item:nth-child(even) .timeline-card {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+
 .time {
-    color: #b75e66;
+    font-size: 0.9rem;
+
     font-weight: 600;
+
+    letter-spacing: 1px;
+
+    color: #b75e66;
+
+    text-transform: uppercase;
 }
 
 .timeline-card h3 {
     font-family: "DM Serif Display", serif;
-    font-size: 1.5rem;
+
+    font-size: 1.6rem;
+
     margin: 10px 0;
 }
 
 .timeline-card p {
-    line-height: 1.7;
     color: #6c5a5a;
+
+    line-height: 1.7;
+
+    font-size: 0.95rem;
 }
 
 
 /* =========================
-   ACCEPTANCE
+   ACCEPT PAGE
 ========================= */
 
 .acceptance-section {
-    background: #fffaf6;
+    min-height: 100vh;
+
+    padding: 80px 30px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fffaf7,
+            #f1e7e2
+        );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
 }
 
-.acceptance-section h1 {
+#acceptanceContent {
+    width: min(100%, 1100px);
+}
+
+.acceptance-section h1,
+.acceptance-section h2 {
     font-family: "DM Serif Display", serif;
-    font-size: clamp(2.3rem, 6vw, 4.5rem);
+
+    font-size: clamp(3rem, 6vw, 5.5rem);
+
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+}
+
+.acceptance-section p {
+    color: #5f5050;
+
     margin-bottom: 20px;
 }
 
+
+/* Buttons container */
+
 .button-container {
-    margin-top: 50px;
+    margin-top: 45px;
 
     display: flex;
-    justify-content: center;
-    align-items: center;
 
-    gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
     flex-wrap: wrap;
 }
 
-button {
-    border: none;
 
-    padding: 18px 30px;
+/* YES BUTTON */
 
-    border-radius: 50px;
-
-    font-family: "Poppins", sans-serif;
-
-    cursor: pointer;
-}
-
-.yes-button {
+#yesButton {
     background: #c96c73;
+
     color: white;
+
+    min-width: 180px;
+
+    box-shadow:
+        0 8px 20px rgba(201, 108, 115, 0.3);
 }
 
-.no-button {
-    background: white;
-    border: 1px solid #d9aaaa;
-    color: #704f4f;
-
-    transition: transform 0.2s ease;
+#yesButton:hover {
+    transform: translateY(-3px);
 }
 
-.success-message {
-    max-width: 600px;
+
+/* NO BUTTON */
+
+#noButton {
+    background: transparent;
+
+    color: #6c5a5a;
+
+    border: 1px solid #d8a9a9;
+
+    min-width: 220px;
 }
 
-.big-heart {
-    font-size: 5rem;
-    animation: heartbeat 1.5s infinite;
-}
-
-@keyframes heartbeat {
-    50% {
-        transform: scale(1.2);
-    }
+#noButton:hover {
+    background: #fff;
 }
 
 
 /* =========================
-   FINAL PAGE
+   FINAL / SUCCESS PAGE
 ========================= */
 
+.success-section,
 .final-section {
     min-height: 100vh;
+
+    padding: 80px 30px;
+
+    position: relative;
+
+    overflow: hidden;
 
     display: flex;
     align-items: center;
@@ -589,111 +373,248 @@ button {
 
     text-align: center;
 
-    padding: 40px;
-
-    color: rgb(138, 115, 115);
-
     background:
-        linear-gradient(
-            rgba(40,25,25,0.55),
-            rgba(40,25,25,0.75)
-        ),
-
+        radial-gradient(
+            circle at center,
+            #fffaf7,
+            #eee3dd
+        );
 }
 
-.final-overlay {
-    max-width: 700px;
+
+/* Keep important content above decorations */
+
+.success-message {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(100%, 750px);
+
+    margin: auto;
+
+    padding: 20px;
 }
 
-.final-section h1 {
-    font-family: "Playwrite AU QLD", cursive;
-    font-size: clamp(2rem, 5vw, 4rem);
-    margin-bottom: 40px;
+.success-message h1,
+.success-message h2 {
+    font-family: "DM Serif Display", serif;
+
+    font-size: clamp(3rem, 8vw, 6rem);
+
+    line-height: 1.1;
+
+    margin: 15px 0;
 }
 
-.final-section p {
-    line-height: 2;
-    margin-bottom: 20px;
-}
+.success-message p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
 
-.final-note {
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(10px);
+    line-height: 1.6;
 
-    padding: 25px;
+    margin: 15px auto;
 
-    border-radius: 15px;
-
-    margin: 40px 0;
+    color: #5f5050;
 }
 
 
 /* =========================
-   CONFETTI
+   CONFETTI / HEARTS
 ========================= */
 
 .confetti {
     position: fixed;
-    top: -50px;
 
-    font-size: 30px;
+    top: -60px;
 
-    animation: fall 4s linear forwards;
+    z-index: 1;
 
-    z-index: 999;
+    pointer-events: none;
+
+    font-size: clamp(20px, 3vw, 35px);
+
+    animation: fall 5s linear forwards;
 }
 
-@keyframes fall {
-    to {
-        transform:
-            translateY(110vh)
-            rotate(720deg);
 
-        opacity: 0;
+@keyframes fall {
+
+    0% {
+        transform: translateY(-60px) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.8;
     }
 }
 
 
 /* =========================
-   MOBILE
+   HOME / REPLAY BUTTON
+========================= */
+
+.home-button {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 16px 32px;
+
+    background: #c96c73;
+
+    color: white;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 8px 20px rgba(201, 108, 115, 0.25);
+}
+
+.home-button:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 25px rgba(201, 108, 115, 0.35);
+}
+
+
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .section,
+    .itinerary-section,
+    .acceptance-section,
+    .success-section,
+    .final-section {
+        padding: 70px 25px;
+    }
+
+    .timeline {
+        width: min(100%, 750px);
+    }
+
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
 ========================= */
 
 @media (max-width: 700px) {
 
-    .timeline::before {
-        left: 30px;
+    body {
+        overflow-x: hidden;
     }
 
-    .timeline-item,
-    .timeline-item:nth-child(odd) {
-        flex-direction: row;
-        padding-left: 70px;
+
+    /* General */
+
+    .section,
+    .itinerary-section,
+    .acceptance-section,
+    .success-section,
+    .final-section {
+        padding: 70px 20px;
+    }
+
+    .section-title {
+        font-size: clamp(2.8rem, 13vw, 4.5rem);
+    }
+
+
+    /* ITINERARY MOBILE */
+
+    .timeline {
+        margin-top: 40px;
+    }
+
+    .timeline::before {
+        left: 25px;
+
+        transform: none;
+    }
+
+    .timeline-item {
+        display: grid;
+
+        grid-template-columns: 50px 1fr;
+
+        gap: 18px;
+
+        align-items: start;
+
+        margin-bottom: 35px;
+
+        min-height: auto;
     }
 
     .timeline-dot {
-        left: 30px;
+        grid-column: 1;
+        grid-row: 1;
+
         width: 50px;
         height: 50px;
+
+        font-size: 1.2rem;
     }
 
-    .timeline-card {
+    .timeline-card,
+    .timeline-item:nth-child(odd) .timeline-card,
+    .timeline-item:nth-child(even) .timeline-card {
+        grid-column: 2;
+        grid-row: 1;
+
         width: 100%;
+
+        padding: 22px;
     }
 
-    .envelope {
-        transform: scale(0.85);
+    .timeline-card h3 {
+        font-size: 1.35rem;
     }
-}
 
 
-@media (max-width: 450px) {
+    /* ACCEPT PAGE MOBILE */
+
+    .acceptance-section h1,
+    .acceptance-section h2 {
+        font-size: clamp(2.8rem, 12vw, 4.5rem);
+    }
 
     .button-container {
         flex-direction: column;
+
+        width: 100%;
+
+        margin-top: 35px;
     }
 
-    button {
-        width: 100%;
+    #yesButton,
+    #noButton {
+        width: min(100%, 320px);
+
+        min-width: unset;
+    }
+
+
+    /* FINAL PAGE MOBILE */
+
+    .success-message h1,
+    .success-message h2 {
+        font-size: clamp(3rem, 14vw, 5rem);
+    }
+
+    .success-message {
+        padding: 10px;
+    }
+
+    .home-button {
+        width: min(100%, 300px);
     }
 
 }
