@@ -646,13 +646,9 @@ button {
     }
 
 
-    /* =========================
-       ITINERARY PAGE
-    ========================= */
-
     .itinerary-section {
         min-height: 100svh;
-        padding: 60px 15px;
+        padding: 60px 20px;
     }
 
     .itinerary-section .page-content {
@@ -662,87 +658,47 @@ button {
     .timeline {
         width: 100%;
         margin-top: 35px;
-        padding-left: 0;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 18px;
     }
 
-
-    /* Timeline line */
-
+    /* Remove the vertical timeline line */
     .timeline::before {
-        left: 24px;
-        top: 25px;
-        bottom: 25px;
-
-        transform: none;
+        display: none;
     }
-
-
-    /* Each timeline item */
 
     .timeline-item {
-        display: grid !important;
-
-        grid-template-columns: 50px minmax(0, 1fr) !important;
-
-        gap: 15px;
-
+        display: block !important;
         width: 100%;
-
-        align-items: start;
-
-        margin-bottom: 30px;
-
+        margin: 0 !important;
         min-height: auto;
     }
 
-
-    /* Timeline icon */
-
+    /* Hide the timeline icons */
     .timeline-dot {
-        grid-column: 1 !important;
-        grid-row: 1 !important;
-
-        width: 48px;
-        height: 48px;
-
-        font-size: 1.2rem;
+        display: none;
     }
-
-
-    /* Timeline card */
 
     .timeline-card,
     .timeline-item:nth-child(odd) .timeline-card,
     .timeline-item:nth-child(even) .timeline-card {
-
-        grid-column: 2 !important;
-        grid-row: 1 !important;
-
         width: 100% !important;
 
-        min-width: 0;
+        padding: 22px;
 
-        padding: 18px;
-
-        text-align: left;
+        text-align: center;
     }
 
     .timeline-card h3 {
-        font-size: 1.3rem;
+        font-size: 1.35rem;
         line-height: 1.2;
     }
 
     .timeline-card p {
         font-size: 0.9rem;
         line-height: 1.6;
-    }
-
-
-    /* Itinerary button */
-
-    .itinerary-section .next-button {
-        margin-top: 10px;
-        width: auto;
     }
 
 
